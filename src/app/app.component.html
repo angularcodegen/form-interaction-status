@@ -1,0 +1,90 @@
+<form [formGroup]="form" class="container my-5">
+  <div class="mb-5">
+    <h1>Form</h1>
+    <div class="d-flex gap-3 mt-3" role="group">
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="form.markAsTouched()">Mark as touched</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="form.markAsUntouched()">Mark as untouched</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="form.markAsDirty()">Mark as dirty</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="form.markAsPristine()">Mark as pristine</button>
+      </div>
+
+      <button class="btn btn-outline-secondary btn-sm" (click)="form.markAllAsTouched()">Mark all as touched</button>
+
+      <button class="btn btn-outline-danger btn-sm" (click)="form.reset()">Reset</button>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <label for="login" class="form-label">Login</label>
+    <input formControlName="login" type="text" class="form-control" id="login" autocomplete="off" />
+
+    <div class="d-flex gap-3 mt-3" role="group">
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="login.markAsTouched()">Mark as touched</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="login.markAsUntouched()">Mark as untouched</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="login.markAsDirty()">Mark as dirty</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="login.markAsPristine()">Mark as pristine</button>
+      </div>
+
+      <button class="btn btn-outline-danger btn-sm" (click)="login.reset()">Reset</button>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <label for="password" class="form-label">Password</label>
+    <input formControlName="password" type="email" class="form-control" id="password" autocomplete="off" />
+
+    <div class="d-flex gap-3 mt-3" role="group">
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="password.markAsTouched()">Mark as touched</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="password.markAsUntouched()">Mark as untouched</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="password.markAsDirty()">Mark as dirty</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="password.markAsPristine()">Mark as pristine</button>
+      </div>
+
+      <button class="btn btn-outline-danger btn-sm" (click)="password.reset()">Reset</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">touched</th>
+        <th scope="col">untouched</th>
+        <th scope="col">dirty</th>
+        <th scope="col">pristine</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-primary">
+        <th scope="row">Form</th>
+        <td [class.text-danger]="form.touched">{{ form.touched }}</td>
+        <td [class.text-danger]="form.untouched">{{ form.untouched }}</td>
+        <td [class.text-danger]="form.dirty">{{ form.dirty }}</td>
+        <td [class.text-danger]="form.pristine">{{ form.pristine }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Login</th>
+        <td [class.text-danger]="login.touched">{{ login.touched }}</td>
+        <td [class.text-danger]="login.untouched">{{ login.untouched }}</td>
+        <td [class.text-danger]="login.dirty">{{ login.dirty }}</td>
+        <td [class.text-danger]="login.pristine">{{ login.pristine }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Password</th>
+        <td [class.text-danger]="password.touched">{{ password.touched }}</td>
+        <td [class.text-danger]="password.untouched">{{ password.untouched }}</td>
+        <td [class.text-danger]="password.dirty">{{ password.dirty }}</td>
+        <td [class.text-danger]="password.pristine">{{ password.pristine }}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>

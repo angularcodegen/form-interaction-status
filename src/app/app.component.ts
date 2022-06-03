@@ -7,15 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   form = new FormGroup({
-    login: new FormControl(null),
+    login: new FormControl<string>(''),
     password: new FormControl(null),
   });
-
-  get login(): FormControl {
-    return this.form.get('login') as FormControl;
-  }
-
-  get password(): FormControl {
-    return this.form.get('password') as FormControl;
-  }
 }
